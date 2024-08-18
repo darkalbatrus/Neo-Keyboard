@@ -1,0 +1,94 @@
+/*!--- Font Family ----*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*!--- Reset Style ----*/
+* {
+  --keboard-color: #dde1e7;
+  --key-color: #3498db;
+  --keyboard-shadow: -3px -3px 7px #ffffff73,
+    2px 2px 5px rgba(94, 104, 121, 0.3);
+  --keyboard-press-shadow: inset -3px -3px 7px #ffffff73,
+    inset 2px 2px 5px rgba(94, 104, 121, 0.3);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background: var(--keboard-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*!--- Keyboard Style ----*/
+.keyboard {
+  background: var(--bg-color);
+  width: 100rem;
+  -o-border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  border-radius: 1rem;
+  box-shadow: var(--keyboard-shadow);
+  padding: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+.keyboard__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+  width: 100%;
+}
+.keyboard__btn {
+  background: var(--bg-color);
+  box-shadow: var(--keyboard-shadow);
+  height: 5rem;
+  min-width: 5rem;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  color: #808080;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+.keyboard__btn:focus {
+  color: var(--key-color);
+  font-size: 1.9rem;
+  box-shadow: var(--keyboard-press-shadow);
+}
+
+.keyboard__btn[value="SPACE"] {
+  width: 60%;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 45%;
+  }
+  .keyboard {
+    width: 50rem;
+  }
+  .keyboard__row {
+    gap: 1rem;
+  }
+  .keyboard__btn {
+    height: 3rem;
+    min-width: 3rem;
+    font-size: 1.2rem;
+  }
+  .keyboard__btn:focus {
+    font-size: 1.1rem;
+  }
+}
